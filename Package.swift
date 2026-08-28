@@ -30,7 +30,7 @@ let package = Package(
         .binaryTarget(
             name: "FairBidSDK",
             url: "https://storage.googleapis.com/gcs-fairbid-sdk-assets-prod-useast1/fairbid-sdk/ios/FairBid-iOS-SDK-3.68.0.zip",
-            checksum: "5cd0514deb6e91e1a8fc696e5da51770dfadfcadfef7236272785326c479eee1"
+            checksum: "2d5bd37b3a9a506b0ebf1554a44e3cb314208d3d67fec807035104fdc606c496"
         ),
     ]
 )
