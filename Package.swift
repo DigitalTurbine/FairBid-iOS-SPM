@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 
 // Created by Digital Turbine on 18/03/2026.
 // Copyright © 2026 Digital Turbine. All rights reserved.
@@ -8,7 +8,7 @@ import PackageDescription
 
 let package = Package(
     name: "FairBidSDK",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "FairBidSDK",
@@ -16,27 +16,21 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/inner-active/DTExchangeSDK-iOS-SPM", .exact("8.4.7")),
+        .package(url: "https://github.com/inner-active/FMPAdapter", .exact("8.4.10")),
     ],
     targets: [
         .target(
             name: "FairBidSDKTarget",
             dependencies: [
                 .target(name: "FairBidSDK"),
-                .target(name: "FMPAdapter"),
-                .product(name: "DTExchangeSDK", package: "DTExchangeSDK-iOS-SPM"),
+                .product(name: "FMPAdapter", package: "FMPAdapter"),
             ],
             path: "Sources/FairBidSDKTarget"
         ),
         .binaryTarget(
             name: "FairBidSDK",
-            url: "https://storage.googleapis.com/gcs-fairbid-sdk-assets-prod-useast1/fairbid-sdk/ios/FairBid-iOS-SDK-3.67.0.zip",
-            checksum: "e3b48f0d06e777e5c70a4d1131671e6d4e4be5bfa48c6d9b56f8a00c1dffc17d"
-        ),
-        .binaryTarget(
-            name: "FMPAdapter",
-            url: "https://cdn2.inner-active.mobi/fmp-sdk/files/FMPAdapter-iOS-SPM-8.4.7.zip",
-            checksum: "76adc05017945b94f9d2b2f6d9a802998075b003875f6602bbd5341b15539645"
+            url: "https://storage.googleapis.com/gcs-fairbid-sdk-assets-prod-useast1/fairbid-sdk/ios/FairBid-iOS-SDK-3.68.0.zip",
+            checksum: "2d5bd37b3a9a506b0ebf1554a44e3cb314208d3d67fec807035104fdc606c496"
         ),
     ]
 )
